@@ -41,6 +41,7 @@ return packer.startup(function(use)
 			{ 'L3MON4D3/LuaSnip' },  -- Required
 		}
 	}
+	use 'mfussenegger/nvim-lint'
 	use("eandrju/cellular-automaton.nvim")
 	use("reisub0/hot-reload.vim")
 	use("nvim-tree/nvim-web-devicons")

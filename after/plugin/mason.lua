@@ -8,7 +8,7 @@ if (not status3) then return end
 mason.setup({})
 
 mason_lspconfig.setup {
-	ensure_installed = { "tailwindcss", "tsserver", "volar" },
+	ensure_installed = { "tailwindcss", "ts_ls", "volar" },
 	handlers = {
 		function(server_name)
 			lspconfig[server_name].setup({})
@@ -19,12 +19,15 @@ mason_lspconfig.setup {
 		astro = function()
 			lspconfig.astro.setup({})
 		end,
-		tsserver = function()
+		ts_ls = function()
 			local vue_typescript_plugin = require("mason-registry").get_package("vue-language-server"):get_install_path()
 					.. '/node_modules/@vue/language-server'
 					.. '/node_modules/@vue/typescript-plugin'
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				init_options = {
+					preferences = {
+						disableSuggestions = true,
+					},
 					plugins = {
 						{
 							name = "@vue/typescript-plugin",

@@ -1,8 +1,25 @@
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
-	ensure_installed = { "html", "tsx", "markdown", "markdown_inline", "toml", "css", "javascript", "typescript", "dart", "php",
-		"python", "c", "lua", "yaml",
-		"json", "vim", "vimdoc", "query" },
+	ensure_installed = {
+		"html",
+		"tsx",
+		"markdown",
+		"markdown_inline",
+		"toml",
+		"css",
+		"javascript",
+		"typescript",
+		"dart",
+		"php",
+		"python",
+		"c",
+		"lua",
+		"yaml",
+		"json",
+		"vim",
+		"vimdoc",
+		"query",
+	},
 	ignore_install = { "html" },
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -29,7 +46,7 @@ require 'nvim-treesitter.configs'.setup {
 	autotag = {
 		enable = true,
 	},
-}
+})
 
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
